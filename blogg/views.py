@@ -9,13 +9,16 @@ from .models import Entry, Blog
 # Create your views here.
 
 def index(request, blog_name=None): #Default page currently has no name
-    if ((blog_name != None) & (blog_name != 'Aktuelles')):
+    if blog_name:
         entries = Entry.objects.filter(blog__topic=blog_name).filter(pub_date__lte=timezone.now()).order_by('pub_date')[:5]
     else:
         entries = Entry.objects.filter(pub_date__lte=timezone.now()).order_by('pub_date')[:5]
 
-    blog_list = Blog.objects.all();
-    button_size = 100.00/blog_list.count();
+    blog_list = Blog.objects.all()
+    if blog_list.count():
+        button_size = 100.00 / blog_list.count()
+    else:
+        button_size = 100
 
     context = {
         'latest_entries' : entries,
