@@ -19,9 +19,18 @@
 <div id="blog">
 {% if latest_entries %}
     {% for entry in latest_entries %}
-        <div class="entry">
-		<a href="{% url 'blogg:detail' entry.id %}" class="entry_link">{{ entry.titel }}</a>
-        </div>
+	<div class="entry_outer">
+	<a href="{% url 'blogg:detail' entry.id %}" class="entry_link">
+        <div class="entry_inner">
+		<div class="entry_titel">
+			<h4 class="entry_titel">{{ entry.titel }}</h4>
+		</div>
+		<div class="entry_preview">
+			<p class="entry_preview">{{entry.content}} </p>
+		</div>
+	</div>
+	</a>
+	</div>
     {% endfor %}
 {% else %}
     <p>No entries are available.</p>
