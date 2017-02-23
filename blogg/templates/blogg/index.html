@@ -1,0 +1,28 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'blogg/style.css' %}" />
+	<header>
+		<div id="banner">
+		</div>
+		<div id="toolbar">
+		{% if blog_list %}
+			{% for blog in blog_list %}
+				<div class="button" style="width:{{ button_size }}%">
+					<a href="{% url 'blogg:blog' blog.topic  %}" class="blogbutton">{{ blog.topic }}</a>
+				</div>
+			{% endfor %}
+		{% endif %}
+		</toolbar>
+	</header>
+<main>
+<div id="blog">
+{% if latest_entries %}
+    {% for entry in latest_entries %}
+        <div class="entry">
+		<a href="{% url 'blogg:detail' entry.id %}" class="entry_link">{{ entry.titel }}</a>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>No entries are available.</p>
+{% endif %}
+</div>
+</main>
