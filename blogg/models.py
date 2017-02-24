@@ -6,14 +6,14 @@ from django.utils.encoding import python_2_unicode_compatible
 # Create your models here.
 class Blog(models.Model):
     topic = models.CharField(max_length = 200)
-    description = models.CharField(max_length = 10000)
+    description = models.TextField(max_length = 2000)
 
     def __str__(self):
         return self.topic
 
 class Entry(models.Model):
     titel = models.CharField(max_length = 200)
-    content = models.CharField(max_length = 10000)
+    content = models.TextField(max_length= 10000)
     pub_date = models.DateTimeField('date published')
     blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
 
