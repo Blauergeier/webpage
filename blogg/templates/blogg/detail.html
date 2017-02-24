@@ -9,7 +9,7 @@
 		{% if blog_list %}
 			{% for blog in blog_list %}
 				<div class="button" style="width:{{ button_size }}%">
-					<a href="{% url 'blogg:blog' blog.topic  %}" class="blogbutton">{{ blog.topic }}</a>
+					<a href="{% url 'blogg:blog' blog.topic  %}" class="blog_button">{{ blog.topic }}</a>
 				</div>
 			{% endfor %}
 		{% endif %}
