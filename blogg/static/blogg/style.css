@@ -14,7 +14,7 @@ body {
 
 header {
 	height: 20%;
-	widht: 100%;
+	width: 100%;
 }
 
 main {
@@ -31,23 +31,28 @@ main {
 	background: rgba(0, 0, 153, 0.6	);	
 }
 
-h4.entry_titel {
+h3.entry_titel {
 	padding: 0;
 	margin: 0;
+	box-shadow: 0px 0px 0px 3px white;
 }
 
 a.entry_link {
         color:white;
         text-decoration:none;
         display: block;
+		width: 100%;
+		height: 100%;
 }
 
 div.entry_outer {
         margin-left: 10%;
         margin-right: 10%; 
-        height: 30%;
         width: 80%;
-        box-shadow: 0px 0px 0px 3px white;
+		height: 33%;
+		margin-top: 0;
+		margin-bottom: 0;
+		padding: 0;
 }
 
 #banner {
@@ -68,7 +73,7 @@ div.entry {
 }
 
 div.button {
-      	border-top: 1px solid #4d4d4d;
+    border-top: 1px solid #4d4d4d;
    	background: #65a9d7;
 	box-shadow: 0px 0px 0px 1px;
 	/* border-left: 1px solid #4d4d4d; */
@@ -77,6 +82,15 @@ div.button {
 	height: 100%;
 	float: left;
 	text-align: center;
+}
+
+div.entry_buffer {
+	height: 10%;
+}
+
+div.entry_content {
+	height: 80%;
+	box-shadow: 0px 0px 0px 3px white;
 }
 
 a#banner_link {
@@ -90,10 +104,11 @@ a.entry_link:visited {
 	text-decoration:none;
 }
 
-a.blogbutton {
+a.blog_button {
 	font-size: 200%;
 	color: white;
 	text-decoration:none;
+	display: block;
 }
 
 a.blogbutton:visited {
@@ -101,3 +116,24 @@ a.blogbutton:visited {
 	color: white;
 	text-decoration:none;
 }
+
+/** Detail page **/
+h1#detail {
+	margin-top: 0;
+	color: white;
+}
+
+p#detail {
+	color: white;
+}
+
+div#detail_entry {
+	margin-left: 10%;
+    margin-right: 10%; 
+    width: 80%;	
+}
+
+div#detail_buffer {
+	height: 5%;
+}
+

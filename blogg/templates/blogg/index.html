@@ -9,7 +9,7 @@
 		{% if blog_list %}
 			{% for blog in blog_list %}
 				<div class="button" style="width:{{ button_size }}%">
-					<a href="{% url 'blogg:blog' blog.topic  %}" class="blogbutton">{{ blog.topic }}</a>
+					<a href="{% url 'blogg:blog' blog.topic  %}" class="blog_button">{{ blog.topic }}</a>
 				</div>
 			{% endfor %}
 		{% endif %}
@@ -20,16 +20,19 @@
 {% if latest_entries %}
     {% for entry in latest_entries %}
 	<div class="entry_outer">
+	<div class="entry_buffer" ></div>
+	<div class="entry_content">
 	<a href="{% url 'blogg:detail' entry.id %}" class="entry_link">
         <div class="entry_inner">
 		<div class="entry_titel">
-			<h4 class="entry_titel">{{ entry.titel }}</h4>
+			<h3 class="entry_titel">{{ entry.titel }}</h3>
 		</div>
 		<div class="entry_preview">
 			<p class="entry_preview">{{entry.content}} </p>
 		</div>
 	</div>
 	</a>
+	</div>
 	</div>
     {% endfor %}
 {% else %}

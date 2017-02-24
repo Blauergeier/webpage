@@ -1,2 +1,30 @@
-<h1>{{ entry.titel }}</h1>
-<p>{{ entry.content }}</p>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'blogg/style.css' %}" />
+	<header>
+		<div id="banner">
+		<a href="{% url 'blogg:index' %}" id="banner_link">	
+		</a>
+		</div>
+		<div id="toolbar">
+		{% if blog_list %}
+			{% for blog in blog_list %}
+				<div class="button" style="width:{{ button_size }}%">
+					<a href="{% url 'blogg:blog' blog.topic  %}" class="blogbutton">{{ blog.topic }}</a>
+				</div>
+			{% endfor %}
+		{% endif %}
+		</toolbar>
+	</header>
+<main>
+<div id="blog">
+	<div id="detail_buffer">
+		
+	</div>
+	<div id="detail_entry">
+		<h1 id="detail">{{ entry.titel }}</h1>
+		<p id="detail">{{ entry.content }}</p>
+	</div>
+</div>
+</main>
+
+
