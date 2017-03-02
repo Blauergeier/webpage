@@ -27,11 +27,13 @@ def index(request, blog_name=None): #Default page currently has no name
 
 def detail(request, entry_id):
     entry = get_object_or_404(Entry, pk=entry_id)
+    split_result = entry.content.splitlines()
 
     button_size = __calculate_button_size();
 
     context = {
-        'entry': entry,
+        'content': split_result,
+        'entry_title': entry.titel,
         'blog_list': Blog.objects.all(),
         'button_size': button_size,
     }

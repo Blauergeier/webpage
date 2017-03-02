@@ -17,12 +17,16 @@
 	</header>
 <main>
 <div id="blog">
-	<div id="detail_buffer">
-		
-	</div>
+	<div id="detail_buffer"></div>
 	<div id="detail_entry">
-		<h1 id="detail">{{ entry.titel }}</h1>
-		<p id="detail">{{ entry.content }}</p>
+		<h1 id="detail">{{ entry_title }}</h1>
+		<p id="detail">
+		{% if content %}
+			{% for line in content %}
+				{{ line }} <br>
+			{% endfor %}
+		{% endif %}
+		</p>
 	</div>
 </div>
 </main>
