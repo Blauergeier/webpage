@@ -18,13 +18,13 @@ header {
 }
 
 main {
-	background: white url("images/background_steel_blue.jpg");
-	height: 80%;
+	background: linear-gradient(#73a4ef,#0444a5);
+	#background: white url("images/background_steel_blue.jpg");
 	width: 100%;
 }
 
 #blog {
-	height: 100%;
+	min-height: 100%;
 	width: 70%;
 	margin-left: 15%;
 	margin-right: 15%;
@@ -133,5 +133,9 @@ div#detail_entry {
 
 div#detail_buffer {
 	height: 5%;
+}
+
+p#msg_empty{
+	margin:0;
 }
 
