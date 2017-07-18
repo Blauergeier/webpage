@@ -1,22 +1,37 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'blogg/style.css' %}" />
 	<header>
+        <div id="toolbar">
+            <div id="buttons">
+                <div class="button">
+                    <a href="" class="blog_button">Reviews</a>
+                </div>
+                <div class="button">
+                    <a href="" class="blog_button">Kurzgeschichten</a>
+                </div>
+                <div class="button">
+                    <a href="" class="blog_button">Blog</a>
+                </div>
+                <div class="button">
+                    <a href="" class="blog_button">Kontakt</a>
+                </div>
+            </div>
+		</div>
 		<div id="banner">
 		<a href="{% url 'blogg:index' %}" id="banner_link">
-			<h4 id="banner_header">felixbittel</h4>
+            <div id="banner_content">
+                <p><img src="{% static "blogg/images/Blue.png" %}" height="50px" width="50px"><span id="banner_header">  Felix </span><span id="banner_header2">Bittel</span></p>
+            </div>
 		</a>
 		</div>
-		<div id="toolbar">
-		{% if blog_list %}
-			{% for blog in blog_list %}
-				<div class="button" style="width:{{ button_size }}%">
-					<a href="{% url 'blogg:blog' blog.topic  %}" class="blog_button">{{ blog.topic }}</a>
-				</div>
-			{% endfor %}
-		{% endif %}
-		</toolbar>
 	</header>
 <main>
+<hr/>
+<div id="showcase">
+    <div id="showcase_content">
+        <img src="{% static "blogg/images/Blue_Red.jpeg" %}" width="100%" height="250px" >
+    </div>
+</div>
 <div id="blog">
 {% if latest_entries %}
     {% for entry in latest_entries %}
